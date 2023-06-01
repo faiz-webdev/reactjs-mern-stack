@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
   let location = useLocation();
-  useEffect(() => {
-  }, [location]);
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
