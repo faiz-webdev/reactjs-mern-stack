@@ -28,8 +28,6 @@ router.post(
   async (req, res) => {
     try {
       const { title, description, tag } = req.body;
-      console.log(req.body);
-
       // If there are errors, return Bad request and the errors
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
