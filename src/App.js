@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
 
