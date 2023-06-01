@@ -13,6 +13,7 @@ function AddNote() {
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note.title, note.description, note.tag);
+    setNote({ title: "", description: "", tag: "" });
   };
 
   const onChange = (event) => {
@@ -25,7 +26,7 @@ function AddNote() {
       <form className="my-3">
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
-          Title
+            Title
           </label>
           <input
             type="text"
@@ -34,11 +35,14 @@ function AddNote() {
             name="title"
             aria-describedby="emailHelp"
             onChange={onChange}
+            minLength={5}
+            required
+            value={note.title}
           />
         </div>
         <div className="mb-3">
           <label htmlFor="description" className="form-label">
-          Description
+            Description
           </label>
           <input
             type="text"
@@ -46,6 +50,9 @@ function AddNote() {
             id="description"
             name="description"
             onChange={onChange}
+            minLength={5}
+            required
+            value={note.description}
           />
         </div>
         <div className="mb-3">
@@ -58,9 +65,15 @@ function AddNote() {
             id="tag"
             name="tag"
             onChange={onChange}
+            value={note.tag}
           />
         </div>
-        <button type="submit" className="btn btn-primary" onClick={handleClick}>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={handleClick}
+          disabled={note.description.length < 5 || note.title.length < 5}
+        >
           Add note
         </button>
       </form>

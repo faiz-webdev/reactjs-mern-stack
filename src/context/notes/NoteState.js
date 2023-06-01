@@ -14,7 +14,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
       },
     });
     const parsedData = await response.json();
@@ -29,7 +29,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -45,7 +45,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
       },
     });
     const parsedData = await response.json();
@@ -63,7 +63,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
       },
       body: JSON.stringify({ title, description, tag }),
     });

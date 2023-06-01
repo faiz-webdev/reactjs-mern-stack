@@ -90,6 +90,8 @@ function Notes() {
                     aria-describedby="emailHelp"
                     onChange={onChange}
                     value={note.etitle}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -103,6 +105,8 @@ function Notes() {
                     name="edescription"
                     onChange={onChange}
                     value={note.edescription}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -133,6 +137,7 @@ function Notes() {
                 type="button"
                 className="btn btn-primary"
                 onClick={handleClick}
+                disabled={note.edescription.length<5 || note.etitle.length<5}
               >
                 Save changes
               </button>
@@ -143,6 +148,9 @@ function Notes() {
 
       <div className="row my-3">
         <h1>Your notes</h1>
+        <div className="container mx-1">
+          {notes.length === 0 && "No notes to display."}
+        </div>
         {notes.map((note) => {
           return (
             <Noteitem note={note} key={note._id} updateNote={updateNote} />
