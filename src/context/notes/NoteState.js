@@ -18,13 +18,12 @@ const NoteState = (props) => {
       },
     });
     const parsedData = await response.json();
-    console.log(parsedData);
     setNotes(parsedData);
   };
 
   // add note
   const addNote = async (title, description, tag) => {
-    console.log(title, description, tag)
+    
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
       headers: {
@@ -35,34 +34,32 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const note = await response.json();
-    console.log("adding a new note", note);
 
     setNotes(notes.concat(note));
   };
 
   //delete notes
-  const deleteNote = async(id) => {
+  const deleteNote = async (id) => {
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token":
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
-        },
-      });
-      const parsedData = await response.json();
-      console.log(parsedData);
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs",
+      },
+    });
+    const parsedData = await response.json();
     //   setNotes(parsedData);
 
-    console.log("deleting notes", id);
     const newNotes = notes.filter((note) => note._id !== id);
     setNotes(newNotes);
   };
 
   // edit notes
   const editNote = async (id, title, description, tag) => {
-    const response = await fetch(`${host}/api/notes/addnote`, {
-      method: "POST",
+
+    await fetch(`${host}/api/notes/updatenote/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
         "auth-token":
@@ -70,6 +67,19 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
+
+    let updatedNote = JSON.parse(JSON.stringify(notes));
+
+    for (let index = 0; index < updatedNote.length; index++) {
+      const el = updatedNote[index];
+      if (el._id === id) {
+        updatedNote[index].title = title;
+        updatedNote[index].description = description;
+        updatedNote[index].tag = tag;
+        break;
+      }
+    }
+    setNotes(updatedNote)
   };
 
   return (
