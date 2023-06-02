@@ -13,8 +13,7 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
+        "auth-token": localStorage.getItem("token"),
       },
     });
     const parsedData = await response.json();
@@ -23,13 +22,11 @@ const NoteState = (props) => {
 
   // add note
   const addNote = async (title, description, tag) => {
-    
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
+        "auth-token": localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -44,8 +41,7 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
+        "auth-token": localStorage.getItem("token"),
       },
     });
     const parsedData = await response.json();
@@ -57,13 +53,11 @@ const NoteState = (props) => {
 
   // edit notes
   const editNote = async (id, title, description, tag) => {
-
     await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYyMjg1OH0.DKixhQqNK7k72iAN2DpVTfztin-eLrHjjj-raF0xI5k",
+        "auth-token": localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -79,7 +73,7 @@ const NoteState = (props) => {
         break;
       }
     }
-    setNotes(updatedNote)
+    setNotes(updatedNote);
   };
 
   return (

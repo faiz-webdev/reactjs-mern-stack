@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,11 +26,11 @@ function Login(props) {
     });
     const json = await response.json();
     if (json.success) {
-        localStorage.setItem('token', json.authtoken)
+      localStorage.setItem("token", json.authtoken);
       navigate("/");
       props.showAlert("Account has been created", "success");
     } else {
-        props.showAlert("Invalid credentials", "error");
+      props.showAlert("Invalid credentials", "error");
     }
   };
 
