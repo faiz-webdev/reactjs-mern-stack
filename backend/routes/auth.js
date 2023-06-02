@@ -30,7 +30,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ error: "Sorry a user with this email already exists" });
+          .json({ error: "Sorry a user with this email already exists", success: false });
       }
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password, salt);
@@ -49,7 +49,7 @@ router.post(
       const authtoken = jwt.sign(data, JWT_SECRET);
 
       // res.json(user)
-      res.json({ authtoken });
+      res.json({ authtoken, success: true });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");
