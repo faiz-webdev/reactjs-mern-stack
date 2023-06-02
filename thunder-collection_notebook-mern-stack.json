@@ -1,0 +1,128 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "notebook-mern-stack",
+    "dateExported": "2023-06-02T07:56:31.607Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2c7a7dab-b554-4e5d-b429-577835a5e549",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-06-02T07:54:44.517Z",
+            "modified": "2023-06-02T07:54:44.517Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"test@mail.com\",\n  \"password\":\"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8c532b54-4635-4f9f-aed3-133f3c4c4c21",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "http://localhost:5000/auth/login",
+            "url": "http://localhost:5000/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-02T07:54:57.660Z",
+            "modified": "2023-06-02T07:54:57.660Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"test2@mail.com\",\n  \"password\":\"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "257882fc-4573-4923-87b2-61b08ee1b6b4",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "http://localhost:5000/auth/login",
+            "url": "http://localhost:5000/auth/login",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-02T07:55:08.345Z",
+            "modified": "2023-06-02T07:55:08.345Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"test2@mail.com\",\n  \"password\":\"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2499e924-b239-4da8-9309-656a7494d7b2",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "get all notes",
+            "url": "localhost:5000/api/notes/fetchallnotes",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-06-02T07:55:16.054Z",
+            "modified": "2023-06-02T07:55:16.054Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3OTk4MGE3Y2E4ZWMzZjFkOTg3ZmIwIn0sImlhdCI6MTY4NTY5MDg5MX0.zWfWAItyxUids_lI5KvJPBFXB6ADWn0t8Tq4rnPc5yg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "80bd58d3-99c5-473b-b52d-abb56ff12564",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "add new notes",
+            "url": "localhost:5000/api/notes/addnote",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-02T07:55:22.221Z",
+            "modified": "2023-06-02T07:55:22.221Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ3ODZjMjkwYWE4YWIxN2Y4ZmY3MTUxIn0sImlhdCI6MTY4NTYxMzYwOX0.4IXuUtRXgrLGTOVhHnW_MS3rPyTnMJr_T_9OQrs0tRs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"test\",\n  \"description\": \"description\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5656a1c2-93fa-4320-8fa1-9597d63dd541",
+            "colId": "7376466a-95c2-46bb-b0e7-d1d3dcde21e9",
+            "containerId": "",
+            "name": "create new user",
+            "url": "http://localhost:3000/api/auth/createuser",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-06-02T07:55:30.300Z",
+            "modified": "2023-06-02T07:55:30.300Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"faiz\",\n  \"email\": \"test@mail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
